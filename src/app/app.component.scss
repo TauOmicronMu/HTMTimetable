@@ -1,0 +1,57 @@
+@import "../styles/mixins";
+@import "../styles";
+.master{
+  &--nav{
+    height: 70px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    &__logo{
+      float: left;
+      @include translate("y", relative);
+      margin-left: 2%;
+    }
+    &__nav{
+      float: right;
+      @include translate("y", relative);
+      margin-right: 2%;
+      &__item{
+        display: inline-block;
+        list-style-type: none;
+        margin: 0 20px;
+        a{
+          text-decoration: none;
+          text-transform: uppercase;
+          font-weight: 500;
+          color: white;
+          letter-spacing: 2px;
+        }
+      }
+      &__item:nth-last-child(1){
+        margin-right: 0;
+      }
+    }
+  }
+  &--header{
+    height: 400px;
+    margin: -92px 0 92px 0;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 92px;
+    .overlay{
+      background-color: rgba(0,0,0,0.5);
+    }
+    @include background-image('/assets/img/master/header.jpg', cover, center, no-repeat);
+    &__text{
+      @include translate("y", relative);
+      text-align: center;
+      color: white;
+      z-index: 2;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-family: $subFont;
+      font-size: 4rem;
+      padding-top: 92px;
+    }
+  }
+}

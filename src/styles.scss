@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+
+/**
+  Variables
+ */
+$font: "fira-sans-2",sans-serif;
+$subFont: "mono45-headline", sans-serif;
+
+
+html{
+  min-height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+html, body, header, footer, div{
+  margin: 0px;
+  padding: 0px;
+  display: block;
+  width: 100%;
+}
+h1, h2, h3, h4, h5, h6, p, li{
+  margin: 0;
+  padding: 0;
+  font-family: $font;
+}
+
+.float{
+  &__left{
+    float:left;
+  }
+  &__right{
+    float:right;
+  }
+}
+
+/* OTHER */
+
+ul{
+  margin: 0px;
+}
+
+.container{
+  width: 95%;
+  margin: auto;
+}
+
+.overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}

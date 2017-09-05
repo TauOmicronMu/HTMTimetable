@@ -1,0 +1,85 @@
+//Border shadow mixins
+@mixin border-shadow($x, $y, $blur, $color){
+  box-shadow: $x $y $blur $color;
+}
+
+@mixin breakpoint($type, $breakpoint){
+  @if($type == 'min'){
+    @media screen and (min-width: $breakpoint){ @content }
+  }
+  @else if($type == 'max'){
+    @media screen and (max-width: $breakpoint){ @content }
+  }
+}
+
+@mixin background-color($r, $g, $b, $opacity){
+  background-color: rgba($r, $g, $b, $opacity);
+}
+
+@mixin background-color-hex($hex){
+  background-color: $hex;
+}
+
+@mixin background-image($url, $size, $position, $repeat){
+  background-image: url($url);
+  -moz-background-image: url($url);
+  -webkit-background-image: url($url);
+  background-size: $size;
+  -moz-background-size: $size;
+  -webkit-background-size: $size;
+  background-position: $position;
+  background-repeat: $repeat;
+}
+
+@mixin background-image-properties($size, $position, $repeat){
+  background-size: $size;
+  -moz-background-size: $size;
+  -webkit-background-size: $size;
+  background-position: $position;
+  background-repeat: $repeat;
+}
+
+@mixin translate($type, $position){
+  //RELATIVE POSITIONED
+  @if($type == 'both' and $position == 'relative'){
+    position: relative;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  @else if($type == 'x' and $position == 'relative'){
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  @else if($type == 'y' and $position == 'relative'){
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+    //ABSOLUTE POSITIONED
+  @else if($type == 'both' and $position == 'absolute'){
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  @else if($type == 'x' and $position == 'absolute'){
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  @else if($type == 'y' and $position == 'absolute'){
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
+
