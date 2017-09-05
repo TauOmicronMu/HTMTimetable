@@ -37,6 +37,26 @@ export class AppComponent {
     return "Learn, build, create";
   }
 
+  getFeatureItems(): [{icon: string, text: string, section: string}]{
+    return [
+      {
+        icon: '/assets/img/landing/timetable.svg',
+        text: 'Timetable',
+        section: 'timetable'
+      },
+      {
+        icon: '/assets/img/landing/workshops.svg',
+        text: 'Workshops',
+        section: 'workshops'
+      },
+      {
+        icon: '/assets/img/landing/faq.svg',
+        text: 'FAQ',
+        section: 'faq'
+      },
+    ]
+  }
+
 }
 
 

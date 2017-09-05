@@ -34,7 +34,7 @@
   }
   &--header{
     height: 400px;
-    margin: -92px 0 92px 0;
+    margin: -92px 0 0 0;
     position: relative;
     z-index: 1;
     padding-bottom: 92px;
@@ -52,6 +52,62 @@
       font-family: $subFont;
       font-size: 4rem;
       padding-top: 92px;
+    }
+  }
+
+  &--features{
+    width: 95%;
+    margin: auto;
+    position: relative;
+    z-index: 10;
+    top: -20px;
+    &__content{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      &__item{
+        width: 30%;
+        background-color: white;
+        text-align: center;
+        margin: 0 2%;
+        border-radius: 4px;
+        @include border-shadow(3px, 3px, 15px, rgba(0,0,0,0.15));
+        position: relative;
+        top: 0;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &__icon{
+          width: 80px;
+          height: 80px;
+          overflow: hidden;
+          position: relative;
+          margin: auto;
+          border-radius: 50%;
+          margin-top: -25px;
+          background-color: white;
+          @include border-shadow(5px, 5px, 15px, rgba(0,0,0,0.3));
+          img{
+            width: 50%;
+            @include translate("y", relative);
+            opacity: .7;
+          }
+        }
+        h3{
+          font-weight: 500;
+          text-transform: uppercase;
+          font-size: 2rem;
+          padding: 20px 0;
+        }
+        &:nth-child(1){
+          margin-left: 0;
+        }
+        &:nth-last-child(1){
+          margin-right: 0;
+        }
+        &:hover{
+          top: -10px;
+        }
+      }
     }
   }
 }
