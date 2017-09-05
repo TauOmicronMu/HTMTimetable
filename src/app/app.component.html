@@ -2,7 +2,7 @@
 
   <!--Nav Bar-->
   <nav class="master--nav">
-    <img class="master--nav__logo" alt="HTM Logo"/>
+    <img class="master--nav__logo" src="/assets/img/master/logo.png" alt="HTM Logo"/>
     <ul class="master--nav__nav">
       <li class="master--nav__nav__item" *ngFor="let item of getNavItems()">
         <a href="{{item.link}}">
@@ -15,12 +15,12 @@
   <!--Header section-->
   <header class="master--header">
     <div class="overlay"></div>
-    <h1 class="master--header__text">{{getHeaderTitle()}}</h1>
+    <h1 class="master--header__text">{{getHeaderTitle()}}<span id="header-carrot"></span></h1>
   </header>
 
   <section class="master--features">
     <div class="master--features__content">
-      <div class="master--features__content__item" *ngFor="let item of getFeatureItems()">
+      <div class="master--features__content__item" *ngFor="let item of getFeatureItems()" (click)="selectSection(item.section)">
         <div class="master--features__content__item__icon">
           <img src="{{item.icon}}"/>
         </div>
@@ -28,5 +28,9 @@
       </div>
     </div>
   </section>
-
 </div>
+
+<div class="container">
+  <app-timetable *ngIf="selectedTab == 'timetable'"></app-timetable>
+</div>
+

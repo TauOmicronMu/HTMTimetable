@@ -1,0 +1,34 @@
+@import "../../styles/mixins";
+.event-box{
+  width: 100%;
+  @include border-shadow(3px, 3px, 15px, rgba(0,0,0,0.10));
+  &--content{
+    box-sizing: border-box;
+    padding: 10px 20px;
+    h2{
+      font-weight: 500;
+      font-size: 3rem;
+    }
+    p{
+      font-size: 1.2rem;
+      line-height: 26px;
+      text-align: justify;
+    }
+  }
+  &--info{
+    display: flex;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding: 0 10px;
+    box-sizing: border-box;
+    text-align: center;
+    &__left, &__right{
+      width: 50%;
+      p{
+        padding: 10px 0;
+      }
+    }
+    &__left{
+      border-right: 1px solid rgba(0,0,0,0.1);
+    }
+  }
+}

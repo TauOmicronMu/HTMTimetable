@@ -1,6 +1,7 @@
 @import "../styles/mixins";
 @import "../styles";
 .master{
+  padding-bottom: 50px;
   &--nav{
     height: 70px;
     overflow: hidden;
@@ -10,6 +11,7 @@
       float: left;
       @include translate("y", relative);
       margin-left: 2%;
+      height: 100%;
     }
     &__nav{
       float: right;
@@ -25,6 +27,10 @@
           font-weight: 500;
           color: white;
           letter-spacing: 2px;
+          transition: all 0.4s ease;
+          &:hover{
+            border-bottom: 2px solid white;
+          }
         }
       }
       &__item:nth-last-child(1){
@@ -53,6 +59,14 @@
       font-size: 4rem;
       padding-top: 92px;
     }
+    #header-carrot{
+      width: 3px;
+      height: 45px;
+      display: inline-block;
+      background-color: white;
+      margin-left: 5px;
+      animation: carretFlicker 1.5s infinite;
+    }
   }
 
   &--features{
@@ -70,7 +84,7 @@
         background-color: white;
         text-align: center;
         margin: 0 2%;
-        border-radius: 4px;
+        border-radius: 3px;
         @include border-shadow(3px, 3px, 15px, rgba(0,0,0,0.15));
         position: relative;
         top: 0;
@@ -95,8 +109,9 @@
         h3{
           font-weight: 500;
           text-transform: uppercase;
-          font-size: 2rem;
+          font-size: 1.5rem;
           padding: 20px 0;
+          letter-spacing: 3px;
         }
         &:nth-child(1){
           margin-left: 0;
@@ -107,7 +122,25 @@
         &:hover{
           top: -10px;
         }
+        @include breakpoint("min", 1150px){
+          width: 25%;
+        }
       }
     }
+  }
+}
+
+@keyframes carretFlicker {
+  0%{
+    opacity: 0;
+  }
+  25%{
+    opacity: .7;
+  }
+  75%{
+    opacity: .7;
+  }
+  100%{
+    opacity: 0;
   }
 }
