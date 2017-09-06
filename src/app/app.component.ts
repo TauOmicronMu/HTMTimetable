@@ -11,10 +11,10 @@ export class AppComponent {
   title = 'app';
   private typescript: any;
 
-  //Header carrot
+  // Header carrot
   private carrotState: boolean = false;
 
-  //Selections
+  // Selections
   private selectedTab: string = 'unselected';
 
   constructor(dom: DomSanitizer){

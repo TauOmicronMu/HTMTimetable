@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-event-box',
@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./event-box.component.scss']
 })
 export class EventBoxComponent implements OnInit {
+
+  @Input('event-name') eventName: string;
+  @Input('event-desc') eventDesc: string;
+  @Input('event-time') eventTime: string;
+  @Input('event-location') eventLocation: string;
 
   constructor() { }
 

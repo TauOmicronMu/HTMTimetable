@@ -128,6 +128,24 @@
       }
     }
   }
+  &--no-content{
+    text-align: center;
+    padding: 0 0 30px 0;
+    img{
+      width: 60px;
+      height: 60px;
+      animation: pointerShake 4s infinite;
+      animation-delay: 2s;
+    }
+    h3{
+      font-weight: 500;
+      font-size: 2rem;
+      letter-spacing: 1px;
+      text-transform: capitalize;
+      width: 60%;
+      margin: auto;
+    }
+  }
 }
 
 @keyframes carretFlicker {
@@ -142,5 +160,36 @@
   }
   100%{
     opacity: 0;
+  }
+}
+
+@keyframes pointerShake {
+  0%{
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  10%{
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+    -o-transform: rotate(10deg);
+    transform: rotate(10deg);
+  }
+  20%{
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100%{
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 }
