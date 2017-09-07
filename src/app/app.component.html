@@ -35,6 +35,6 @@
     <img src="/assets/img/landing/click.svg"/>
     <h3>Select an item from above so the magic can take place!</h3>
   </div>
-  <app-timetable *ngIf="selectedTab == 'timetable'"></app-timetable>
+  <app-timetable [@componentFade]="showTimetable"></app-timetable>
 </div>
 

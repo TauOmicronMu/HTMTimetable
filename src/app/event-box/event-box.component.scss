@@ -2,9 +2,10 @@
 .event-box{
   width: 100%;
   @include border-shadow(3px, 3px, 15px, rgba(0,0,0,0.10));
+  background-color: white;
   &--content{
     box-sizing: border-box;
-    padding: 10px 20px;
+    padding: 30px;
     h2{
       font-weight: 500;
       font-size: 2.6rem;
@@ -13,6 +14,8 @@
       font-size: 1.2rem;
       line-height: 26px;
       text-align: justify;
+      font-weight: 500;
+      opacity: .8;
     }
   }
   &--info{
@@ -25,6 +28,7 @@
       width: 50%;
       p{
         padding: 10px 0;
+        font-weight: 500;
       }
     }
     &__left{

@@ -1,3 +1,4 @@
+@import "./styles/mixins";
 /* You can add global styles to this file, and also import other style files */
 
 /**
@@ -19,6 +20,20 @@ html, body, header, footer, div{
   display: block;
   width: 100%;
 }
+
+html{
+  background-color: white;
+}
+
+body{
+  background-color: #ebebeb;
+  min-height: 100vh;
+  @include breakpoint("min", 1500px){
+    width: 80%;
+    margin: auto;
+  }
+}
+
 h1, h2, h3, h4, h5, h6, p, li{
   margin: 0;
   padding: 0;
