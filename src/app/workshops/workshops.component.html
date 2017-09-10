@@ -1,0 +1,11 @@
+<div class="workshops">
+  <div class="workshops--header">
+    <h1>Workshops</h1>
+    <hr/>
+  </div>
+
+  <div class="workshops--workshops">
+    <app-event-box *ngFor="let workshop of getWorkshops()" [event-name]="workshop.getEventName()" [event-desc]="workshop.getEventDesc()" [event-location]="workshop.getEventLocation()" [event-time]="workshop.getEventTime()" [event-icon]="workshop.getEventIcon()"></app-event-box>
+  </div>
+
+</div>

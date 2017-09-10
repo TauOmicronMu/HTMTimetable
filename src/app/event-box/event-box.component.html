@@ -1,4 +1,7 @@
 <div class="event-box">
+  <div class="event-box--image" *ngIf="eventIcon">
+    <img src="{{eventIcon}}"/>
+  </div>
   <div class="event-box--content">
     <h2>{{eventName}}</h2>
     <p>{{eventDesc}}</p>

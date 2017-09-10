@@ -3,12 +3,32 @@
   width: 100%;
   @include border-shadow(3px, 3px, 15px, rgba(0,0,0,0.10));
   background-color: white;
+  position: relative;
+  margin-top: 50px;
+  &--image{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 25px;
+    right: 5%;
+    background-color: white;
+    @include border-shadow(2px, 2px, 15px, rgba(0,0,0,0.05));
+    border-radius: 6px;
+    overflow: hidden;
+    img{
+      width: 100%;
+      @include translate("both", relative);
+    }
+  }
   &--content{
     box-sizing: border-box;
-    padding: 30px;
+    //padding: 30px;
+    padding: 15px 30px 30px 30px;
     h2{
       font-weight: 500;
       font-size: 2.6rem;
+      width: 88%;
+      white-space: pre-line;
     }
     p{
       font-size: 1.2rem;

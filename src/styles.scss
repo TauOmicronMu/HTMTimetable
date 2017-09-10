@@ -28,6 +28,7 @@ html{
 body{
   background-color: #ebebeb;
   min-height: 100vh;
+  padding-bottom: 50px;
   @include breakpoint("min", 1500px){
     width: 80%;
     margin: auto;

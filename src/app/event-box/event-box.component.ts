@@ -11,6 +11,7 @@ export class EventBoxComponent implements OnInit {
   @Input('event-desc') eventDesc: string;
   @Input('event-time') eventTime: string;
   @Input('event-location') eventLocation: string;
+  @Input('event-icon') eventIcon: string;
 
   constructor() { }
 
