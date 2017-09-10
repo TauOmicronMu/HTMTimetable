@@ -21,7 +21,7 @@ export class WorkshopsComponent implements OnInit {
         'In this workshops, we will introduce ES6 and all of the new features being released in the new release of JavaScript',
         '12:00',
         'Workshop Zone',
-        '/assets/img/workshops/js.png'
+        './assets/img/workshops/js.png'
       ));
     }
     return workshops;
