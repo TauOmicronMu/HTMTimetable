@@ -1,0 +1,15 @@
+{
+  "name": "htm-server",
+  "version": "1.0.0",
+  "description": "A light API layer for the HTM timetable",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4",
+    "mongoose": "^4.11.11"
+  }
+}
