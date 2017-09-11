@@ -27,7 +27,7 @@
       justify-content: left;
       padding-bottom: 40px;
       app-event-box{
-        width: 59%;
+        width: 50%;
         margin-right: 30px;
         @include breakpoint("min", 1100px){
           width: 40%;

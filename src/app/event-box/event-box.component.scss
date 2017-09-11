@@ -5,6 +5,7 @@
   background-color: white;
   position: relative;
   margin-top: 50px;
+  min-height: 200px;
   &--image{
     position: absolute;
     width: 40px;
@@ -27,8 +28,10 @@
     h2{
       font-weight: 500;
       font-size: 2.6rem;
-      width: 88%;
-      white-space: pre-line;
+      width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
     }
     p{
       font-size: 1.2rem;
@@ -36,6 +39,7 @@
       text-align: justify;
       font-weight: 500;
       opacity: .8;
+      max-height: 54px;
     }
   }
   &--info{
@@ -44,6 +48,8 @@
     padding: 0 10px;
     box-sizing: border-box;
     text-align: center;
+    position: absolute;
+    bottom: 0;
     &__left, &__right{
       width: 50%;
       p{

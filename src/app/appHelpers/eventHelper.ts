@@ -36,6 +36,19 @@ export class EventHelper{
     return `${day}  ${time}`;
   }
 
+  getTimeDetailed(){
+    let eventTime = new Date(this.eventTime);
+    let hours = eventTime.getHours().toString();
+    if(eventTime.getHours() < 10){
+      hours = '0' + hours;
+    }
+    let time = {
+      day: eventTime.getDay(),
+      hours: hours
+    }
+    return time;
+  }
+
   getEventLocation(){
     return this.eventLocation;
   }

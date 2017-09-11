@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { EventHelper } from "../appHelpers/eventHelper"
 import { HttpClient } from '@angular/common/http';
 import { DataLoaderService } from "../services/data-loader.service"
@@ -10,13 +10,20 @@ import { DataLoaderService } from "../services/data-loader.service"
 })
 export class TimetableComponent implements OnInit {
 
-  public timetableData: any;
+  public timetableData;
+  public featuredEvents: any;
 
-  constructor(public http: HttpClient, private data: DataLoaderService) { }
+  @Output() timetableLoaded: EventEmitter<any> = new EventEmitter();
+
+  constructor(public http: HttpClient, private data: DataLoaderService) {
+    this.timetableLoaded.subscribe((data) => {
+      console.log('Loaded timetable')
+      this.calculateFeatured();
+    })
+  }
 
   ngOnInit() {
-    this.calculateFeatured();
-    this.getTimetableData()
+    this.getTimetableData();
   }
 
   getCurrentDate(){
@@ -34,11 +41,16 @@ export class TimetableComponent implements OnInit {
     let hour: number;
     if(date.getHours() >= 12){
       suffix = 'pm';
-      hour = date.getHours() - 12;
+      hour = Math.abs(date.getHours() - 12);
     }
     else{
+      if(date.getHours() == 0){
+        hour = Math.abs(date.getHours() - 12);
+      }
+      else{
+        hour = date.getHours();
+      }
       suffix = 'am';
-      hour = date.getHours();
     }
     return {
       day: day[date.getDay()],
@@ -61,58 +73,49 @@ export class TimetableComponent implements OnInit {
         i++
       }
       this.timetableData = result;
+      this.timetableLoaded.emit('loaded');
     });
-
-
-    // this.loadTimetableData()
-    //   .then((data) => {
-    //     console.log('Data:');
-    //     console.log(data);
-    //   });
-    // for(let i =7; i <= 25; i++){
-    //   let timeString = "";
-    //   if(i < 10){
-    //     timeString = "0"
-    //   }
-    //   else{
-    //     timeString = "";
-    //   }
-    //   timetableArray.push(new EventHelper('Test event', 'This is an event description', 'Saturday', timeString+i+':00', 'Main Hall'));
-    // }
 
   }
 
   calculateFeatured(){
-    // //Create an empty array to push and pop featured events to
-    // let featureArray = [];
-    //
-    // //Create variable to get current time
-    // let currentTime = new Date().getHours();
-    // // console.log(currentTime); //log this value
-    //
-    // //Create variable to store the events array
-    // let timetableArray = this.getTimetableData();
-    //
-    // let featureFilled = false;
-    // let startTime = currentTime;
-    // while(!featureFilled && timetableArray.length > 0){
-    //   //Iterate through all events
-    //   for(let i = 0; i < timetableArray.length; i++){
-    //     let event = timetableArray[i];
-    //     let eventTime = event.getEventTime();
-    //     if(eventTime.split(':')[0] === startTime.toString() && event.getFeatured() != true){
-    //       console.log(event.getEventName());
-    //       featureArray.push(event);
-    //       event.setFearured(true);
-    //     }
-    //   }
-    //   startTime++;
-    //   if(startTime > 24 || featureArray.length == 2){
-    //     featureFilled = true;
-    //   }
-    // }
-    // console.log(featureArray);
-    // return featureArray;
+    //Create an empty array to push and pop featured events to
+    let featureArray = [];
+
+    //Create variable to get current time
+    let currentHour = new Date().getHours();
+    let currentDay = new Date().getDay();
+
+    //Create variable to store the events array
+    let timetableArray = this.timetableData;
+
+    let featureFilled = false;
+    //Start time
+    let startTime = currentHour;
+    startTime = 12;
+
+    while(startTime <= 24 && featureArray.length < 2){
+
+      for(let i = 0; i < timetableArray.length; i++){
+        let event = timetableArray[i];
+        console.log('-----------------------');
+        console.log('Start Time: ' + startTime);
+        console.log('Event Time: ' + event.getTimeDetailed().hours);
+        console.log('Current Day: ' + currentDay);
+        console.log('Event Day: ' + event.getTimeDetailed().day);
+        console.log('-----------------------');
+        if((startTime.toString() === event.getTimeDetailed().hours) && event.getFeatured() != true && featureArray.length < 2){
+          event.setFearured(true);
+          featureArray.push(event);
+          console.log('Pushing event');
+        }
+      }
+
+      startTime++;
+
+    }
+    this.featuredEvents = featureArray;
+
   }
 
 
