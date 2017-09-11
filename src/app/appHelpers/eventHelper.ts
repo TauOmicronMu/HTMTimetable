@@ -4,12 +4,14 @@ export class EventHelper{
   constructor(
     private eventName: string,
     private eventDesc: string,
+    private eventDay: string,
     private eventTime: string,
     private eventLocation: string,
     private eventIcon: string = null
   ){
     this.eventName = eventName;
     this.eventDesc = eventDesc;
+    this.eventDay = eventDay;
     this.eventTime = eventTime;
     this.eventLocation = eventLocation;
     this.eventIcon = eventIcon;
@@ -23,8 +25,15 @@ export class EventHelper{
     return this.eventDesc;
   }
 
+  getEventDay(){
+    return this.eventDay;
+  }
+
   getEventTime(){
-    return this.eventTime;
+    let tmpTime = this.eventTime.split(" ");
+    let day = tmpTime[0];
+    let time = tmpTime[4];
+    return `${day}  ${time}`;
   }
 
   getEventLocation(){

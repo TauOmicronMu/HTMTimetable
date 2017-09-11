@@ -36,17 +36,6 @@ export class AppComponent {
   }
 
 
-  headerFlicker(el){
-    console.log('Called');
-    switch (this.carrotState){
-      case true:
-        el.style.opacity = 0;
-      case false:
-        el.style.opacity = 1;
-    }
-  }
-
-
   getNavItems():[{text: string, link: string}]{
     return [
       {

@@ -26,3 +26,24 @@
   }
 
 }
+
+.workshops{
+  width: 90%;
+  margin: auto;
+  h1{
+    font-weight: 500;
+    font-size: 4rem;
+  }
+  p{
+    font-size: 2rem;
+  }
+  hr{
+    width: 80px;
+    height: 2px;
+    background-color: black;
+    border: 0;
+    margin: 15px 0;
+    opacity: 0.5;
+  }
+}
+
