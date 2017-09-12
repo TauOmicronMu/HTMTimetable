@@ -63,7 +63,7 @@ export class TimetableComponent implements OnInit {
 
   getTimetableData(){
     let result = [];
-    this.http.get('http://localhost:9000/timetable').subscribe(data => {
+    this.http.get('http://18.221.23.133:9000/timetable').subscribe(data => {
       console.log(data);
       let i = 0;
       for (let key in data) {
