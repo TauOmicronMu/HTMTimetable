@@ -4,6 +4,12 @@
   min-height: 500px;
   width: 90%;
   margin: auto;
+  &--loading{
+    font-weight: 500;
+    font-size: 4rem;
+    letter-spacing:2px;
+    text-transform: capitalize;
+  }
   &--header{
     &__title{
       padding-bottom: 30px;

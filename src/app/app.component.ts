@@ -54,7 +54,7 @@ export class AppComponent {
   }
 
   getHeaderTitle(): string{
-    return "Learn, build, create";
+    return "Learn, build, share";
   }
 
   getFeatureItems(): [{icon: string, text: string, section: string}]{

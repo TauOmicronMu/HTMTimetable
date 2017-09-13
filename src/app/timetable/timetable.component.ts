@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
 import { EventHelper } from "../appHelpers/eventHelper"
 import { HttpClient } from '@angular/common/http';
 import { DataLoaderService } from "../services/data-loader.service"
@@ -12,17 +12,24 @@ export class TimetableComponent implements OnInit {
 
   public timetableData;
   public featuredEvents: any;
+  public loadingData: boolean;
 
   @Output() timetableLoaded: EventEmitter<any> = new EventEmitter();
 
-  constructor(public http: HttpClient, private data: DataLoaderService) {
+  constructor(
+    public http: HttpClient,
+    private data: DataLoaderService,
+    private ref: ChangeDetectorRef) {
     this.timetableLoaded.subscribe((data) => {
       console.log('Loaded timetable')
       this.calculateFeatured();
+      this.loadingData = false;
+      ref.detectChanges()
     })
   }
 
   ngOnInit() {
+    this.loadingData = true;
     this.getTimetableData();
   }
 
@@ -60,11 +67,9 @@ export class TimetableComponent implements OnInit {
   }
 
 
-
   getTimetableData(){
     let result = [];
-    this.http.get('http://18.221.23.133:9000/timetable').subscribe(data => {
-      console.log(data);
+    this.http.get('https://api.webaddressgoeshere.com/timetable').subscribe(data => {
       let i = 0;
       for (let key in data) {
         let eventData = data[i];
@@ -76,6 +81,11 @@ export class TimetableComponent implements OnInit {
       this.timetableLoaded.emit('loaded');
     });
 
+  }
+
+  hideLoadingData(){
+    this.loadingData = false;
+    console.log(this.loadingData);
   }
 
   calculateFeatured(){
@@ -98,16 +108,9 @@ export class TimetableComponent implements OnInit {
 
       for(let i = 0; i < timetableArray.length; i++){
         let event = timetableArray[i];
-        console.log('-----------------------');
-        console.log('Start Time: ' + startTime);
-        console.log('Event Time: ' + event.getTimeDetailed().hours);
-        console.log('Current Day: ' + currentDay);
-        console.log('Event Day: ' + event.getTimeDetailed().day);
-        console.log('-----------------------');
         if((startTime.toString() === event.getTimeDetailed().hours) && event.getFeatured() != true && featureArray.length < 2){
           event.setFearured(true);
           featureArray.push(event);
-          console.log('Pushing event');
         }
       }
 
