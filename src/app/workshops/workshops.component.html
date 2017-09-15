@@ -1,17 +1,17 @@
-<!--<div class="workshops">-->
-  <!--<div class="workshops&#45;&#45;header">-->
-    <!--<h1>Workshops</h1>-->
-    <!--<hr/>-->
-  <!--</div>-->
+<div class="workshops">
+  <div class="workshops--header">
+    <h1>Workshops</h1>
+    <hr/>
+  </div>
 
-  <!--<div class="workshops&#45;&#45;workshops">-->
-    <!--<app-event-box *ngFor="let workshop of getWorkshops()" [event-name]="workshop.getEventName()" [event-desc]="workshop.getEventDesc()" [event-location]="workshop.getEventLocation()" [event-time]="workshop.getEventTime()" [event-icon]="workshop.getEventIcon()"></app-event-box>-->
-  <!--</div>-->
+  <div class="workshops--workshops">
+    <app-event-box *ngFor="let workshop of workshops" [event-name]="workshop.getEventName()" [event-desc]="workshop.getEventDesc()" [event-location]="workshop.getEventLocation()" [event-time]="workshop.getEventTime()" [event-icon]="workshop.getEventIcon()"></app-event-box>
+  </div>
 
-<!--</div>-->
-
-<div class="workshops" [@componentInit]="componentState">
-  <h1>Coming soon!</h1>
-  <hr/>
-  <p>We're still busy booking in our speakers for our workshops right now, check back closer to the event!</p>
 </div>
+
+<!--<div class="workshops" [@componentInit]="componentState">-->
+  <!--<h1>Coming soon!</h1>-->
+  <!--<hr/>-->
+  <!--<p>We're still busy booking in our speakers for our workshops right now, check back closer to the event!</p>-->
+<!--</div>-->

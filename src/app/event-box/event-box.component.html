@@ -6,7 +6,7 @@
     <h2>{{eventName}}</h2>
     <p>{{eventDesc}}</p>
   </div>
-  <div class="event-box--info">
+  <div class="event-box--info" *ngIf="eventLocation && eventTime">
     <div class="event-box--info__left">
       <p>{{eventLocation}}</p>
     </div>

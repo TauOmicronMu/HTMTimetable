@@ -5,12 +5,13 @@
   background-color: white;
   position: relative;
   margin-top: 50px;
-  min-height: 200px;
+  margin-bottom: 44px;
+  max-height:300px;
   &--image{
     position: absolute;
     width: 40px;
     height: 40px;
-    top: 25px;
+    top: 15px;
     right: 5%;
     background-color: white;
     @include border-shadow(2px, 2px, 15px, rgba(0,0,0,0.05));
@@ -24,14 +25,21 @@
   &--content{
     box-sizing: border-box;
     //padding: 30px;
-    padding: 15px 30px 30px 30px;
+    padding: 15px 30px 15px 30px;
+    overflow: scroll;
+    max-height: 300px;
     h2{
+      //font-weight: 500;
+      //font-size: 2rem;
+      //width: 100%;
+      //text-overflow: ellipsis;
+      //overflow: hidden;
+      //white-space: nowrap;
       font-weight: 500;
       font-size: 2rem;
-      width: 100%;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      white-space: nowrap;
+      width: 90%;
+      line-height: 32px;
+      padding-bottom: 15px;
     }
     p{
       font-size: 1.2rem;
@@ -39,7 +47,9 @@
       text-align: justify;
       font-weight: 500;
       opacity: .8;
-      max-height: 54px;
+      //max-height: 54px;
+      max-height: 160px;
+      overflow: scroll;
     }
   }
   &--info{
@@ -49,7 +59,9 @@
     box-sizing: border-box;
     text-align: center;
     position: absolute;
-    bottom: 0;
+    background-color: white;
+    bottom: -44px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
     &__left, &__right{
       width: 50%;
       p{
@@ -62,3 +74,4 @@
     }
   }
 }
+

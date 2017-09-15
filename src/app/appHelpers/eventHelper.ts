@@ -30,7 +30,8 @@ export class EventHelper{
   }
 
   getEventTime(){
-    let tmpTime = this.eventTime.split(" ");
+    /*console.log('Event time: ' + this.eventTime);*/
+    let tmpTime = this.eventTime.toString().split(" ");
     let day = tmpTime[0];
     let time = tmpTime[4];
     let hour = time.split(':')[0];
