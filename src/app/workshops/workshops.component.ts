@@ -50,7 +50,7 @@ export class WorkshopsComponent implements OnInit {
         desc:  'A beginner friendly introduction to what WebVR is and how to build games using A-Frame',
         day: 'Saturday',
         time: new Date('Saturday 23 September 16:00 2017'),
-        icon:  './assets/img/workshops/ibm.png',
+        icon:  './assets/img/workshops/ibm.gif',
         location:  'Workshop Room',
 
       },
