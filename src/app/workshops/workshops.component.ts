@@ -117,18 +117,18 @@ export class WorkshopsComponent implements OnInit {
   }
 
   getWotrkshopHeight(){
-    let tiles: any = document.getElementsByClassName('event-box');
-    let max = 0;
-    for(let i = 0; i < this.workshops.length; i++){
-      //console.log(tiles[i].scrollHeight);
-      if(tiles[i].scrollHeight > max){
-        max = tiles[i].scrollHeight;
-      }
-    }
-    console.log(max);
-    for(let e = 0; e < this.workshops.length; e++){
-      tiles[e].style.height = `${max - 44}px`;
-    }
+    // let tiles: any = document.getElementsByClassName('event-box');
+    // let max = 0;
+    // for(let i = 0; i < this.workshops.length; i++){
+    //   //console.log(tiles[i].scrollHeight);
+    //   if(tiles[i].scrollHeight > max){
+    //     max = tiles[i].scrollHeight;
+    //   }
+    // }
+    // console.log(max);
+    // for(let e = 0; e < this.workshops.length; e++){
+    //   tiles[e].style.height = `${max - 44}px`;
+    // }
   }
 
 }
