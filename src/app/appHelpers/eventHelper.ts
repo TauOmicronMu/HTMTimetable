@@ -33,7 +33,9 @@ export class EventHelper{
     let tmpTime = this.eventTime.split(" ");
     let day = tmpTime[0];
     let time = tmpTime[4];
-    return `${day}  ${time}`;
+    let hour = time.split(':')[0];
+    let minute = time.split(':')[1];
+    return `${day}  ${hour}:${minute}`;
   }
 
   getTimeDetailed(){

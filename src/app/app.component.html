@@ -20,11 +20,17 @@
 
   <section class="master--features">
     <div class="master--features__content">
-      <div class="master--features__content__item" *ngFor="let item of getFeatureItems()" (click)="selectSection(item.section)">
+      <div class="master--features__content__item master--features__content__item__desktop" *ngFor="let item of getFeatureItems()" (click)="selectSection(item.section)">
         <div class="master--features__content__item__icon">
           <img src="{{item.icon}}"/>
         </div>
         <h3>{{item.text}}</h3>
+      </div>
+      <div class="master--features__content__item master--features__content__item__mobile">
+        <div class="master--features__content__item__icon">
+          <img src=""/>
+        </div>
+        <h3>Select An Option</h3>
       </div>
     </div>
   </section>
@@ -35,6 +41,7 @@
     <img src="./assets/img/landing/click.svg"/>
     <h3>Select an item from above so the magic can take place!</h3>
   </div>
+  <!--<h1 *ngIf="loadingComponent" class="master&#45;&#45;loading">Loading Timetable...</h1>-->
   <app-timetable *ngIf="selectedTab == 'timetable'"></app-timetable>
   <app-workshops *ngIf="selectedTab == 'workshops'"></app-workshops>
   <app-faq *ngIf="selectedTab == 'faq'"></app-faq>

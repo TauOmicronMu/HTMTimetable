@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
@@ -6,18 +6,6 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [
-    trigger('componentFade', [
-      state('inactive', style({
-        opacity: 0
-      })),
-      state('active', style({
-        opacity: 1
-      })),
-      transition('inactive => active', animate('1000ms ease-in')),
-      transition('active => inactive', animate('1000ms ease-out'))
-    ])
-  ]
 })
 export class AppComponent {
 
@@ -29,10 +17,17 @@ export class AppComponent {
 
   // Selections
   public selectedTab: string = 'unselected';
-  public showTimetable: string = 'inactive';
+
+  //Component loading
+  public loadingComponent: boolean;
+  @Output() componentLoaded: EventEmitter<any> = new EventEmitter();
+
 
   constructor(dom: DomSanitizer){
     this.typescript = dom.bypassSecurityTrustHtml('<script src="https://use.typekit.net/hrn8bph.js"></script><script>try{Typekit.load({ async: true });}catch(e){}</script>');
+    this.componentLoaded.subscribe(data => {
+      console.log('Component loaded')
+    })
   }
 
 
@@ -49,6 +44,22 @@ export class AppComponent {
       {
         text: 'FAQ',
         link: '#faq'
+      },
+      {
+        text: 'API Challenges',
+        link: '#api'
+      },
+      {
+        text: 'Sponsors',
+        link: '#sponsors'
+      },
+      {
+        text: 'Challenges',
+        link: '#challenges'
+      },
+      {
+        text: 'Prizes',
+        link: '#prizes'
       }
     ]
   }
@@ -78,13 +89,12 @@ export class AppComponent {
   }
 
   selectSection(section){
+    this.loadingComponent = true;
     switch (section){
       case 'timetable':
         //do something
         console.log('Is timetable');
-        this.showTimetable = 'active';
         this.selectedTab = section;
-
         break;
       case 'workshops':
         //do something else

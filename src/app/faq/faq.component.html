@@ -1,5 +1,12 @@
-<div class="faq">
-  <h1>Coming soon!</h1>
-  <hr/>
-  <p>We're still working on our FAQ section right now, check back closer to the event!</p>
+<div class="faq" [@componentInit]="componentState">
+  <div class="faq--header">
+    <h1>FAQ's</h1>
+    <hr/>
+  </div>
+  <div class="faq--items">
+    <div class="faq--items__item" *ngFor="let faq of faqData">
+      <h2>{{faq.getEventName()}}</h2>
+      <p>{{faq.getEventDesc()}}</p>
+    </div>
+  </div>
 </div>

@@ -90,6 +90,18 @@
         top: 0;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
+        &__desktop{
+          @include breakpoint("max", 670px){
+            display: none;
+          }
+        }
+        &__mobile{
+          display: none;
+          width: 60%;
+          @include breakpoint("max", 670px){
+            display: block;
+          }
+        }
         &__icon{
           width: 80px;
           height: 80px;
@@ -112,6 +124,9 @@
           font-size: 1.5rem;
           padding: 20px 0;
           letter-spacing: 3px;
+          @include breakpoint("max", 730px){
+            font-size: 1.1rem;
+          }
         }
         &:nth-child(1){
           margin-left: 0;

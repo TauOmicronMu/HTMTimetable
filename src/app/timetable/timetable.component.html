@@ -1,18 +1,17 @@
-<div class="timetable" id="timetable">
-  <h1 *ngIf="loadingData" class="timetable--loading">Loading Timetable...</h1>
+<div class="timetable" id="timetable" [@componentInit]="componentState">
   <div class="timetable--header">
     <div class="timetable--header__title">
       <h1>{{getCurrentDate().day}}, {{getCurrentDate().hour}}<span>{{getCurrentDate().suffix}}</span></h1>
       <h3>Here's what's coming up soon...</h3>
     </div>
+    <h1 *ngIf="loading" class="timetable--loading">Loading Timetable...</h1>
     <div class="timetable--header__featured">
       <app-event-box *ngFor="let feature of featuredEvents" [event-name]="feature.getEventName()" [event-desc]="feature.getEventDesc()" [event-time]="feature.getEventTime()" [event-location]="feature.getEventLocation()"></app-event-box>
-      <h1 *ngIf="!featuredEvents">No Featured Events :(</h1>
     </div>
   </div>
 
   <div class="timetable--body">
-    <table>
+    <table *ngIf="timetableData">
       <thead>
         <tr>
           <th>Event</th>

@@ -2,35 +2,57 @@ import { Component, OnInit, Output, EventEmitter, ChangeDetectorRef } from '@ang
 import { EventHelper } from "../appHelpers/eventHelper"
 import { HttpClient } from '@angular/common/http';
 import { DataLoaderService } from "../services/data-loader.service"
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-timetable',
   templateUrl: './timetable.component.html',
-  styleUrls: ['./timetable.component.scss']
+  styleUrls: ['./timetable.component.scss'],
+  animations: [
+    trigger('componentInit', [
+      state('inactive', style({
+        opacity: 0,
+      })),
+      state('active', style({
+        opacity: 1,
+      })),
+      transition('inactive => active', animate('300ms ease-in')),
+      transition('active => inactive', animate('300ms ease-out'))
+    ])
+  ]
 })
 export class TimetableComponent implements OnInit {
 
   public timetableData;
   public featuredEvents: any;
-  public loadingData: boolean;
+
+  public componentState: string = 'inactive';
+  public loading: boolean = true;
 
   @Output() timetableLoaded: EventEmitter<any> = new EventEmitter();
+  @Output() componentLoaded: EventEmitter<any> = new EventEmitter();
 
   constructor(
     public http: HttpClient,
     private data: DataLoaderService,
     private ref: ChangeDetectorRef) {
     this.timetableLoaded.subscribe((data) => {
-      console.log('Loaded timetable')
+      console.log('Loaded timetable');
       this.calculateFeatured();
-      this.loadingData = false;
+      //TODO: Implement when connection to internet
+      // this.componentState = 'active';
+      // console.log(this.componentState);
       ref.detectChanges()
-    })
+    });
+    setTimeout(()=>{
+      this.componentState = 'active';
+
+    },500)
   }
 
   ngOnInit() {
-    this.loadingData = true;
     this.getTimetableData();
+    this.componentLoaded.emit('timetable-loaded');
   }
 
   getCurrentDate(){
@@ -78,14 +100,10 @@ export class TimetableComponent implements OnInit {
         i++
       }
       this.timetableData = result;
+      this.loading = false;
       this.timetableLoaded.emit('loaded');
     });
 
-  }
-
-  hideLoadingData(){
-    this.loadingData = false;
-    console.log(this.loadingData);
   }
 
   calculateFeatured(){
