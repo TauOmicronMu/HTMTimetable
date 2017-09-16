@@ -28,42 +28,48 @@ export class WorkshopsComponent implements OnInit {
   constructor() {
     this.data = [
       {
+        title: 'Intro to Git/Github',
+        desc:  'The way that scientific research is shared and evaluated still bears the legacy of a system based around print media. New technologies in the digital era present a huge opportunity to accelerate discovery and make science collaborative instead of competitive. Come to the eLife workshop to learn more about how open-source development is being applied to scientific research, the issues we face when bringing cutting-edge technology to the science publishing world, and to develop ideas for solutions that you could prototype at this hackathon and beyond.',
+        day: 'Saturday',
+        time: new Date('Saturday 23 September 14:00 2017'),
+        icon:  './assets/img/workshops/git.png',
+        location:  'Workshop Room',
+      },
+      {
+        title: 'Opportunities in open source for open science – what, why and how?',
+        desc:  'The way that scientific research is shared and evaluated still bears the legacy of a system based around print media. New technologies in the digital era present a huge opportunity to accelerate discovery and make science collaborative instead of competitive. Come to the eLife workshop to learn more about how open-source development is being applied to scientific research, the issues we face when bringing cutting-edge technology to the science publishing world, and to develop ideas for solutions that you could prototype at this hackathon and beyond.',
+        day: 'Saturday',
+        time: new Date('Saturday 23 September 14:00 2017'),
+        location:  'Workshop Room',
+      },
+      {
         title: 'Intro to Web VR Games',
         desc:  'A beginner friendly introduction to what WebVR is and how to build games using A-Frame',
         day: 'Saturday',
         time: new Date('Saturday 23 September 15:00 2017'),
         icon:  './assets/img/workshops/samsung.png',
         location:  'Workshop Room',
-
-      },
-      {
-        title: 'Getting Started with the Nexmo Voice API',
-        desc:  "Learn the concepts of the Nexmo Voice API and how to build your first application, along with seeing some of the more advanced features that are available such as Websockets",
-        day: 'Saturday',
-        time: new Date('Saturday 23 September 16:00 2017'),
-        icon:  './assets/img/workshops/nexmo.png',
-        location:  'Workshop Room',
-
       },
       {
         title: 'Introduction to Node-RED',
         desc:  'A beginner friendly introduction to what WebVR is and how to build games using A-Frame',
         day: 'Saturday',
-        time: new Date('Saturday 23 September 16:00 2017'),
-        icon:  './assets/img/workshops/ibm.gif',
+        time: new Date('Saturday 23 September 15:00 2017'),
+        icon:  './assets/img/workshops/node-red.png',
         location:  'Workshop Room',
 
       },
       {
-        title: 'Newbies guide to APIs',
+        title: 'Intro to Docker',
         desc:  'In this workshop, we will run through containerisation, the idea of Cattle vs Pets, and give a brief intro to Docker by building our own images, running them, and then sharing them with each other',
         day: 'Saturday',
         time: new Date('Saturday 23 September 16:00 2017'),
+        icon:  './assets/img/workshops/docker.png',
         location:  'Workshop Room',
       },
       {
-        title: 'Opportunities in open source for open science – what, why and how?',
-        desc:  'The way that scientific research is shared and evaluated still bears the legacy of a system based around print media. New technologies in the digital era present a huge opportunity to accelerate discovery and make science collaborative instead of competitive. Come to the eLife workshop to learn more about how open-source development is being applied to scientific research, the issues we face when bringing cutting-edge technology to the science publishing world, and to develop ideas for solutions that you could prototype at this hackathon and beyond.',
+        title: "Newbies Guide to API's",
+        desc:  "In this workshop we'll walk you through getting setup with a basic Web API",
         day: 'Saturday',
         time: new Date('Saturday 23 September 16:00 2017'),
         location:  'Workshop Room',
@@ -76,19 +82,18 @@ export class WorkshopsComponent implements OnInit {
         location:  'Workshop Room',
       },
       {
-        title: 'Intro to Git/Github',
-        desc:  'The way that scientific research is shared and evaluated still bears the legacy of a system based around print media. New technologies in the digital era present a huge opportunity to accelerate discovery and make science collaborative instead of competitive. Come to the eLife workshop to learn more about how open-source development is being applied to scientific research, the issues we face when bringing cutting-edge technology to the science publishing world, and to develop ideas for solutions that you could prototype at this hackathon and beyond.',
+        title: 'Getting Started with the Nexmo Voice API',
+        desc:  "Learn the concepts of the Nexmo Voice API and how to build your first application, along with seeing some of the more advanced features that are available such as Websockets",
         day: 'Saturday',
-        time: new Date('Saturday 23 September 14:00 2017'),
-        icon:  './assets/img/workshops/git.png',
+        time: new Date('Saturday 23 September 17:00 2017'),
+        icon:  './assets/img/workshops/nexmo.png',
         location:  'Workshop Room',
       },
       {
-        title: 'Intro to Nexmo voice API',
-        desc:  'Learn the concepts of the Nexmo Voice API and how to build your first application, along with seeing some of the more advanced features that are available such as Websockets',
+        title: 'Building Large-scale Mobile Apps',
+        desc:  "Mark Olleson walks us thorugh building large scale applications",
         day: 'Saturday',
         time: new Date('Saturday 23 September 17:00 2017'),
-        icon:  './assets/img/workshops/git.png',
         location:  'Workshop Room',
       }
     ]

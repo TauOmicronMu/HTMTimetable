@@ -1,0 +1,18 @@
+<div class="tile-popup">
+  <div class="tile-popup--image" *ngIf="eventIcon">
+    <img src="{{eventIcon}}"/>
+  </div>
+  <div class="tile-popup--content">
+    <h2>{{eventName}}</h2>
+    <p>{{eventDesc}}</p>
+    <!--<a href="#"><p>View More</p></a>-->
+  </div>
+  <div class="tile-popup--info" *ngIf="eventLocation && eventTime">
+    <div class="tile-popup--info__left">
+      <p>{{eventLocation}}</p>
+    </div>
+    <div class="tile-popup--info__right">
+      <p>{{eventTime}}</p>
+    </div>
+  </div>
+</div>

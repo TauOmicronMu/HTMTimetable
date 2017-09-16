@@ -1,12 +1,11 @@
 @import "../../styles/mixins";
-.event-box{
+.tile-popup{
   width: 100%;
   @include border-shadow(3px, 3px, 15px, rgba(0,0,0,0.10));
   background-color: white;
   position: relative;
   margin-top: 50px;
   margin-bottom: 44px;
-  //max-height:300px;
   &--image{
     position: absolute;
     width: 40px;
@@ -24,9 +23,8 @@
   }
   &--content{
     box-sizing: border-box;
+    //padding: 30px;
     padding: 15px 30px 15px 30px;
-    //overflow: scroll;
-    //max-height: 300px;
     h2{
       //font-weight: 500;
       //font-size: 2rem;
@@ -46,9 +44,6 @@
       text-align: justify;
       font-weight: 500;
       opacity: .8;
-      //max-height: 54px;
-      //overflow: scroll;
-      //max-height: 160px;
     }
   }
   &--info{
