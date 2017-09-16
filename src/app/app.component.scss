@@ -2,6 +2,44 @@
 @import "../styles";
 .master{
   padding-bottom: 50px;
+  .mobile-menu{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    &__content{
+      @include translate("both", absolute);
+      ul{
+        list-style-type: none;
+        text-align: center;
+        li{
+          display: block;
+          font-size: 2rem;
+          margin: 30px auto;
+          font-weight: 500;
+          text-transform: uppercase;
+          transition: all 0.3s ease;
+          &:hover{
+            letter-spacing: 2px;
+          }
+        }
+      }
+    }
+    &__close{
+      display: block;
+      text-align: right;
+      position: absolute;
+      right: 2%;
+      top: 10px;
+      cursor: pointer;
+      h3{
+        font-weight: 500;
+      }
+    }
+  }
   &--nav{
     height: 70px;
     overflow: hidden;
@@ -17,10 +55,14 @@
       float: right;
       @include translate("y", relative);
       margin-right: 2%;
+      @include breakpoint("max", 730px){
+        display: none;
+      }
       &__item{
         display: inline-block;
         list-style-type: none;
         margin: 0 20px;
+        cursor: pointer;
         a{
           text-decoration: none;
           text-transform: uppercase;
@@ -35,6 +77,21 @@
       }
       &__item:nth-last-child(1){
         margin-right: 0;
+      }
+    }
+    &__mobile{
+      display: none;
+      text-align: right;
+      color: white;
+      position: relative;
+      right: 2%;
+      top: 10px;
+      cursor: pointer;
+      h3{
+        font-weight: 500;
+      }
+      @include breakpoint("max", 730px){
+        display: block;
       }
     }
   }

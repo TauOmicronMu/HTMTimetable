@@ -18,6 +18,10 @@ export class AppComponent {
   // Selections
   public selectedTab: string = 'unselected';
 
+  //Mobile menu
+  public mobileMenuActive: boolean = false;
+  public mobileContent: string = '';
+
   //Component loading
   public loadingComponent: boolean;
   @Output() componentLoaded: EventEmitter<any> = new EventEmitter();
@@ -35,31 +39,23 @@ export class AppComponent {
     return [
       {
         text: 'Timetable',
-        link: '#timetable'
+        link: 'timetable'
       },
       {
         text: 'Workshops',
-        link: '#workshops'
+        link: 'workshops'
       },
       {
         text: 'FAQ',
-        link: '#faq'
+        link: 'faq'
       },
-      {
-        text: 'API Challenges',
-        link: '#api'
-      },
-      {
-        text: 'Sponsors',
-        link: '#sponsors'
-      },
+      // {
+      //   text: 'Sponsors',
+      //   link: 'sponsors'
+      // },
       {
         text: 'Challenges',
-        link: '#challenges'
-      },
-      {
-        text: 'Prizes',
-        link: '#prizes'
+        link: 'challenges'
       }
     ]
   }
@@ -90,6 +86,7 @@ export class AppComponent {
 
   selectSection(section){
     this.loadingComponent = true;
+    this.mobileMenuActive = false;
     switch (section){
       case 'timetable':
         //do something
@@ -112,6 +109,16 @@ export class AppComponent {
         this.selectedTab = section;
         break;
     }
+  }
+
+  toggleMobileMenu(type){
+    if(this.mobileMenuActive){
+      this.mobileMenuActive = false;
+    }
+    else{
+      this.mobileMenuActive = true;
+    }
+    this.mobileContent = type;
   }
 
 }

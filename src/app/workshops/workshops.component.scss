@@ -1,3 +1,4 @@
+@import "../../styles/mixins";
 .workshops{
   width: 90%;
   margin: auto;
@@ -25,7 +26,12 @@
     app-event-box{
       width: 70%;
       margin-right: 1%;
-
+      @include breakpoint("max", 700px){
+        width: 85%;
+      }
+      @include breakpoint("max", 530px){
+        width: 95%;
+      }
     }
   }
 
