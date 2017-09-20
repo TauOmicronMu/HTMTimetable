@@ -243,6 +243,19 @@
     right: 100px;
     bottom: 100px;
     z-index: 10000;
+    transform-origin: bottom right;
+    transition: discordTransform 1s ease;
+  }
+}
+
+@keyframes discordTransform {
+  0% {
+    //transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    //transform: scale(1);
+    opacity: 1;
   }
 }
 

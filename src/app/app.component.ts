@@ -5,7 +5,19 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [
+    trigger('discord', [
+      state('hidden', style({
+        transform: 'scale(0)'
+      })),
+      state('visible',   style({
+        transform: 'scale(1)'
+      })),
+      transition('hidden => visible', animate('100ms ease-in')),
+      transition('visible => hidden', animate('100ms ease-out'))
+    ])
+  ]
 })
 export class AppComponent {
 
@@ -23,7 +35,7 @@ export class AppComponent {
   public mobileContent: string = '';
 
   //Discord
-  public showDiscord: boolean = false;
+  public showDiscord: string = 'hidden';
 
   //Component loading
   public loadingComponent: boolean;
@@ -125,10 +137,10 @@ export class AppComponent {
   }
 
   toggleDiscord(){
-    if(this.showDiscord){
-      this.showDiscord = false;
+    if(this.showDiscord == 'hidden'){
+      this.showDiscord = 'visible';
     } else{
-      this.showDiscord = true;
+      this.showDiscord = 'hidden';
     }
   }
 
