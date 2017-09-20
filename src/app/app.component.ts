@@ -22,6 +22,9 @@ export class AppComponent {
   public mobileMenuActive: boolean = false;
   public mobileContent: string = '';
 
+  //Discord
+  public showDiscord: boolean = false;
+
   //Component loading
   public loadingComponent: boolean;
   @Output() componentLoaded: EventEmitter<any> = new EventEmitter();
@@ -119,6 +122,14 @@ export class AppComponent {
       this.mobileMenuActive = true;
     }
     this.mobileContent = type;
+  }
+
+  toggleDiscord(){
+    if(this.showDiscord){
+      this.showDiscord = false;
+    } else{
+      this.showDiscord = true;
+    }
   }
 
 }

@@ -220,6 +220,32 @@
   }
 }
 
+.discord{
+  &--icon{
+    position: fixed;
+    right: 2%;
+    bottom: 2%;
+    background-color: #7289DA;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+    img{
+      width: 60%;
+      @include translate("both", relative);
+      object-fit: cover;
+    }
+  }
+  &--box{
+    width: 350px;
+    height: 500px;
+    position: fixed;
+    right: 100px;
+    bottom: 100px;
+    z-index: 10000;
+  }
+}
+
 @keyframes carretFlicker {
   0%{
     opacity: 0;
