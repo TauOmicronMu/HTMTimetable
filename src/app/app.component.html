@@ -65,12 +65,15 @@
   <app-challenges *ngIf="selectedTab == 'challenges'"></app-challenges>
 </div>
 
-<div class="discord">
+<div class="discord" id="circle" (click)="toggleDiscord()">
   <div class="discord--box" [@discord]="showDiscord">
     <iframe src="https://discordapp.com/widget?id=304313295165325323&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
   </div>
-  <div class="discord--icon" (click)="toggleDiscord()">
-    <img src="./assets/img/landing/discord-icon.png"/>
+  <div id="icon" class="discord--icon">
+    <div id="discord" class="discord--icon__logo"></div>
+  </div>
+  <div id="cross" class="discord--cross closed">
+    <div id="cross-icon" class="discord--cross__icon"></div>
   </div>
 </div>
 

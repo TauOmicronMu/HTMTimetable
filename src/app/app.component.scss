@@ -114,7 +114,7 @@
       letter-spacing: 3px;
       font-family: $subFont;
       font-size: 4rem;
-      padding-top: 92px;
+      padding: 92px 5% 0 5%;
     }
     #header-carrot{
       width: 3px;
@@ -221,43 +221,109 @@
 }
 
 .discord{
-  &--icon{
-    position: fixed;
-    right: 2%;
-    bottom: 2%;
-    background-color: #7289DA;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    cursor: pointer;
-    img{
-      width: 60%;
-      @include translate("both", relative);
-      object-fit: cover;
-    }
-  }
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
+  background-color: #7289DA;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  animation: circleAnimate .4s ease 2s forwards;
+  z-index: 999999999;
   &--box{
     width: 350px;
     height: 500px;
     position: fixed;
-    right: 100px;
-    bottom: 100px;
+    right: 80px;
+    bottom: 80px;
     z-index: 10000;
     transform-origin: bottom right;
     transition: discordTransform 1s ease;
+    @include breakpoint("max", 530px){
+      right: 0;
+      bottom: 100px;
+    }
+    iframe{
+      @include breakpoint("max", 366px){
+        width: 260px;
+        float: right;
+      }
+    }
+  }
+  &--icon, &--cross{
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    div{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &--icon{
+    animation: iconAnimateIn 0.3s ease;
+    &__logo{
+      background-image: url('http://www.vaingloryleague.com/wp-content/uploads/2017/01/discord.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat
+    }
+  }
+  &--icon.open{
+    transform: translate(-50%, -50%) scale(0);
+    animation: iconAnimateOut .3s ease;
+  }
+  &--cross{
+    animation: crossAnimateIn .3s ease;
+    width: 40%;
+    height: 40%;
+    &__icon{
+      background-image: url('http://www.rosas.center/fileadmin/templates/IS/image/close.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat
+    }
+  }
+  &--cross.closed{
+    transform: translate(-50%, -50%) scale(0);
+    animation: iconAnimateOut .3s ease;
   }
 }
 
-@keyframes discordTransform {
-  0% {
-    //transform: scale(0);
-    opacity: 0;
-  }
-  100% {
-    //transform: scale(1);
-    opacity: 1;
-  }
+@keyframes circleAnimate {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
 }
+
+@keyframes iconAnimateIn {
+  0% { transform: translate(-50%, -50%) scale(0); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes crossAnimateIn {
+  0% { transform: translate(-50%, -50%) rotate(-90deg) scale(0); }
+  100% { transform: translate(-50%, -50%) rotate(90deg) scale(1); }
+}
+
+@keyframes iconAnimateOut {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  100% { transform: translate(-50%, -50%) scale(0); display: none; }
+}
+
+//@keyframes discordTransform {
+//  0% {
+//    //transform: scale(0);
+//    opacity: 0;
+//  }
+//  100% {
+//    //transform: scale(1);
+//    opacity: 1;
+//  }
+//}
 
 @keyframes carretFlicker {
   0%{

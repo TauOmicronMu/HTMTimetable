@@ -152,6 +152,10 @@ export class AppComponent {
   }
 
   toggleDiscord(){
+    let icon = document.getElementById('icon');
+    let cross = document.getElementById('cross');
+    icon.classList.toggle("open")
+    cross.classList.toggle("closed")
     if(this.showDiscord == 'hidden'){
       this.showDiscord = 'visible';
     } else{
