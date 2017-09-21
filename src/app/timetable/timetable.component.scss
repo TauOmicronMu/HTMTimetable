@@ -80,6 +80,9 @@
         tr{
           background-color: white;
           border-bottom: .5px solid rgba(0,0,0,0.5);
+          &:nth-child(even){
+            background-color: #f7f7f7;
+          }
           td{
             font-weight: 500;
           }
