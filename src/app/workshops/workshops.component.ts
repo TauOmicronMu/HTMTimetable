@@ -29,7 +29,7 @@ export class WorkshopsComponent implements OnInit {
     this.data = [
       {
         title: 'Intro to Git/Github',
-        desc:  'The way that scientific research is shared and evaluated still bears the legacy of a system based around print media. New technologies in the digital era present a huge opportunity to accelerate discovery and make science collaborative instead of competitive. Come to the eLife workshop to learn more about how open-source development is being applied to scientific research, the issues we face when bringing cutting-edge technology to the science publishing world, and to develop ideas for solutions that you could prototype at this hackathon and beyond.',
+        desc:  'Liam Sorta teaches what Git is and how you can use the Git methodology in your development life. This workshop will focus specifically on GitHub as a platform.',
         day: 'Saturday',
         time: new Date('Saturday 23 September 14:00 2017'),
         icon:  './assets/img/workshops/git.png',
@@ -52,7 +52,7 @@ export class WorkshopsComponent implements OnInit {
       },
       {
         title: 'Introduction to Node-RED',
-        desc:  'A beginner friendly introduction to what WebVR is and how to build games using A-Frame',
+        desc:  'Node RED, a tool for wiring together hardware devices, APIs and online services in new and interesting ways is being introduced by Pete Cripps',
         day: 'Saturday',
         time: new Date('Saturday 23 September 15:00 2017'),
         icon:  './assets/img/workshops/node-red.png',
@@ -69,14 +69,14 @@ export class WorkshopsComponent implements OnInit {
       },
       {
         title: "Newbies Guide to API's",
-        desc:  "In this workshop we'll walk you through getting setup with a basic Web API",
+        desc:  "Steve Pitchford introduces you to REST API's and how you can utilise them in your projects.",
         day: 'Saturday',
         time: new Date('Saturday 23 September 16:00 2017'),
         location:  'Workshop Room',
       },
       {
         title: 'Intro to web dev',
-        desc:  'The way that scientific research is shared and evaluated still bears the legacy of a system based around print media. New technologies in the digital era present a huge opportunity to accelerate discovery and make science collaborative instead of competitive. Come to the eLife workshop to learn more about how open-source development is being applied to scientific research, the issues we face when bringing cutting-edge technology to the science publishing world, and to develop ideas for solutions that you could prototype at this hackathon and beyond.',
+        desc:  'Alex Wiley introduces us to the world of full stack website development giving us insight into how to build out your Node Rest API and pair it with a mongoose backend.',
         day: 'Saturday',
         time: new Date('Saturday 23 September 15:00 2017'),
         location:  'Workshop Room',

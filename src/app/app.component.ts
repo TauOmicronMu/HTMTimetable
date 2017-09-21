@@ -55,27 +55,32 @@ export class AppComponent {
   }
 
 
-  getNavItems():[{text: string, link: string}]{
+  getNavItems():[{text: string, link: string, type: string}]{
     return [
       {
         text: 'Timetable',
-        link: 'timetable'
+        link: 'timetable',
+        type: null
       },
       {
         text: 'Workshops',
-        link: 'workshops'
+        link: 'workshops',
+        type: null
       },
       {
         text: 'FAQ',
-        link: 'faq'
+        link: 'faq',
+        type: null
       },
-      // {
-      //   text: 'Sponsors',
-      //   link: 'sponsors'
-      // },
       {
         text: 'Challenges',
-        link: 'challenges'
+        link: 'challenges',
+        type: null
+      },
+      {
+        text: 'Devpost',
+        link: 'http://hackthemidlands2017.devpost.com',
+        type: 'link'
       }
     ]
   }
