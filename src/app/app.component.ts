@@ -24,8 +24,9 @@ export class AppComponent {
   title = 'app';
   private typescript: any;
 
-  // Header carrot
+  // Header
   private carrotState: boolean = false;
+  public headerText: string = "";
 
   // Selections
   public selectedTab: string = 'unselected';
@@ -47,6 +48,10 @@ export class AppComponent {
     this.componentLoaded.subscribe(data => {
       console.log('Component loaded')
     })
+  }
+
+  ngAfterContentInit(){
+    this.generateHeaderText()
   }
 
 
@@ -75,8 +80,18 @@ export class AppComponent {
     ]
   }
 
-  getHeaderTitle(): string{
-    return "Learn, build, share";
+  generateHeaderText(){
+    let count = 0;
+    let title = "Learn, build, share";
+    let titleArray = title.split('');
+    let interval = setInterval(() => {
+      if(this.headerText.length == titleArray.length){
+        clearInterval(interval);
+        return;
+      }
+      this.headerText += titleArray[count];
+      count ++;
+    },100);
   }
 
   getFeatureItems(): [{icon: string, text: string, section: string}]{
