@@ -6,9 +6,9 @@
     </div>
     <h1 *ngIf="loading" class="timetable--loading">Loading Timetable...</h1>
     <div class="timetable--header__featured">
-      <!--<app-event-box *ngFor="let feature of featuredEvents" [event-name]="feature.getEventName()" [event-desc]="" [event-time]="feature.getEventTime()" [event-location]="feature.getEventLocation()"></app-event-box>-->
-      <app-event-box event-name="Opening Ceremony" [event-desc]="" event-time="11:00" event-location="Main Hall"></app-event-box>
-      <app-event-box event-name="Hacking Starts" [event-desc]="" event-time="12:00" event-location="Main Hall"></app-event-box>
+      <app-event-box *ngFor="let feature of featuredEvents" [event-name]="feature.getEventName()" [event-desc]="" [event-time]="feature.getEventTime()" [event-location]="feature.getEventLocation()"></app-event-box>
+      <!--<app-event-box event-name="Opening Ceremony" [event-desc]="" event-time="11:00" event-location="Main Hall"></app-event-box>-->
+      <!--<app-event-box event-name="Hacking Starts" [event-desc]="" event-time="12:00" event-location="Main Hall"></app-event-box>-->
     </div>
   </div>
 

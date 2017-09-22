@@ -120,7 +120,7 @@ export class TimetableComponent implements OnInit {
     let featureFilled = false;
     //Start time
     let startTime = currentHour;
-    startTime = 12;
+    // startTime = 8;
 
     while(startTime <= 24 && featureArray.length < 2){
 
