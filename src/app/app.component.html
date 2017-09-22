@@ -7,7 +7,7 @@
       <ul class="mobile-menu__content__nav" *ngIf="mobileContent == 'menu'">
         <li class="mobile-menu__content__nav__item" *ngFor="let item of getNavItems()" (click)="selectSection(item.link)">
           <a *ngIf="item.type === 'link'" href="{{item.section}}"></a>
-          <a *ngIf="!item.type" (click)="selectSection(item.section)">{{item.text}}</a>
+          <a *ngIf="!item.type" (click)="selectSection(item.link)">{{item.text}}</a>
         </li>
       </ul>
       <ul class="mobile-menu__content__nav" *ngIf="mobileContent == 'select'">

@@ -112,9 +112,9 @@ export class AppComponent {
         section: 'workshops'
       },
       {
-        icon: './assets/img/landing/faq.svg',
-        text: 'FAQ',
-        section: 'faq'
+        icon: './assets/img/landing/challenges.svg',
+        text: 'Challenges',
+        section: 'challenges'
       },
     ]
   }
