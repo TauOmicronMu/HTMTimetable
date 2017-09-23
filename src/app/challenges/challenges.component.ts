@@ -53,15 +53,8 @@ export class ChallengesComponent implements OnInit {
         sponsorLogo: './assets/img/sponsors/majestic.png',
         api: 'https://majestic.com/',
         desc: 'This is a description'
-      },
-      {
-        name: 'The best hack that combines multiple independent services in an ingenious way',
-        sponsor: 'Vanti',
-        sponsorLogo: './assets/img/sponsors/vanti.png',
-        api: 'https://www.vanti.co.uk/',
-        desc: 'This is a description'
       }
-    ]
+    ];
     setTimeout(()=>{
       this.componentState = 'active';
     },500)

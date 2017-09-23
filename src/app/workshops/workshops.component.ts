@@ -43,21 +43,19 @@ export class WorkshopsComponent implements OnInit {
         location:  'Workshop Room',
       },
       {
-        title: 'Intro to Web VR Games',
-        desc:  'A beginner friendly introduction to what WebVR is and how to build games using A-Frame',
-        day: 'Saturday',
-        time: new Date('Saturday 23 September 15:00 2017'),
-        icon:  './assets/img/workshops/samsung.png',
-        location:  'Workshop Room',
-      },
-      {
         title: 'Introduction to Node-RED',
         desc:  'Node RED, a tool for wiring together hardware devices, APIs and online services in new and interesting ways is being introduced by Pete Cripps',
         day: 'Saturday',
         time: new Date('Saturday 23 September 15:00 2017'),
         icon:  './assets/img/workshops/node-red.png',
         location:  'Workshop Room',
-
+      },
+      {
+        title: 'Intro to web dev',
+        desc:  'Alex Wiley introduces us to the world of full stack website development giving us insight into how to build out your Node Rest API and pair it with a mongoose backend.',
+        day: 'Saturday',
+        time: new Date('Saturday 23 September 15:00 2017'),
+        location:  'Workshop Room',
       },
       {
         title: 'Intro to Docker',
@@ -75,15 +73,16 @@ export class WorkshopsComponent implements OnInit {
         location:  'Workshop Room',
       },
       {
-        title: 'Intro to web dev',
-        desc:  'Alex Wiley introduces us to the world of full stack website development giving us insight into how to build out your Node Rest API and pair it with a mongoose backend.',
+        title: 'Getting Started with the Nexmo Voice API',
+        desc:  "Learn the concepts of the Nexmo Voice API and how to build your first application, along with seeing some of the more advanced features that are available such as Websockets",
         day: 'Saturday',
-        time: new Date('Saturday 23 September 15:00 2017'),
+        time: new Date('Saturday 23 September 17:00 2017'),
+        icon:  './assets/img/workshops/nexmo.png',
         location:  'Workshop Room',
       },
       {
-        title: 'Getting Started with the Nexmo Voice API',
-        desc:  "Learn the concepts of the Nexmo Voice API and how to build your first application, along with seeing some of the more advanced features that are available such as Websockets",
+        title: 'Intro to Web VR games',
+        desc:  "A beginner friendly introduction to what WebVR is and how to build games using A-Frame",
         day: 'Saturday',
         time: new Date('Saturday 23 September 17:00 2017'),
         icon:  './assets/img/workshops/nexmo.png',
@@ -93,7 +92,7 @@ export class WorkshopsComponent implements OnInit {
         title: 'Building Large-scale Mobile Apps',
         desc:  "Mark Olleson walks us thorugh building large scale applications",
         day: 'Saturday',
-        time: new Date('Saturday 23 September 17:00 2017'),
+        time: new Date('Saturday 23 September 19:00 2017'),
         location:  'Workshop Room',
       }
     ]
